@@ -20,8 +20,16 @@ const HeaderList = ({onToggel}) => {
       <Text>Cost Effective</Text>
       <TouchableOpacity
         onPress={() => onToggel()}
-        style={{width: 30, height: 40, backgroundColor: 'red'}}
-      />
+        style={{
+          borderRadius: 20,
+          minWidth: 100,
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 40,
+          backgroundColor: 'red',
+        }}>
+        <Text>Toggel</Text>
+      </TouchableOpacity>
     </View>
   );
 };
