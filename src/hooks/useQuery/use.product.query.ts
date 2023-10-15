@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {getProduct} from '../../api';
+import {Products} from '../../models';
 export enum Price {
   'COST' = 'Cost Effective',
   'BIT' = 'Bit Pricer',
@@ -7,7 +8,7 @@ export enum Price {
 }
 
 export const useProduct = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Products[]>([]);
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
 
@@ -54,7 +55,7 @@ export const useProduct = () => {
   };
 };
 
-export const useProductById = ({id}) => {
+export const useProductById = ({id}: {id: any}) => {
   const [data, setData] = useState();
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);

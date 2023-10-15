@@ -21,6 +21,14 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
   },
+  toggel: {
+    borderRadius: 20,
+    minWidth: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    backgroundColor: 'red',
+  },
   item: {
     flex: 1,
     alignItems: 'center',

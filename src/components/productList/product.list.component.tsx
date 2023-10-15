@@ -3,7 +3,6 @@ import React, {useMemo, useState} from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   TouchableOpacity,
   FlatList,
   ScrollView,
@@ -18,22 +17,13 @@ const HeaderList = ({onToggel}) => {
   return (
     <View style={styles.sectionHeader}>
       <Text>Cost Effective</Text>
-      <TouchableOpacity
-        onPress={() => onToggel()}
-        style={{
-          borderRadius: 20,
-          minWidth: 100,
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: 40,
-          backgroundColor: 'red',
-        }}>
+      <TouchableOpacity onPress={() => onToggel()} style={styles.toggel}>
         <Text>Toggel</Text>
       </TouchableOpacity>
     </View>
   );
 };
-export const ProductList = ({data}) => {
+export const ProductList = ({data}: {data: any}) => {
   const [grid, setGrid] = useState(false);
   const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
 
