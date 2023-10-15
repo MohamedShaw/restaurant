@@ -11,7 +11,7 @@ export default function App() {
   LogBox.ignoreAllLogs();
 
   return (
-    <GestureHandlerRootView style={{flex: 1, backgroundColor:'red'}}>
+    <GestureHandlerRootView style={{flex: 1}}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <NavigatorsContainer />
