@@ -10,6 +10,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
+import {Price} from '../../hooks';
 import {RootStackParamList} from '../../navigation/types.navigator';
 import {styles} from './styles';
 
@@ -32,9 +33,11 @@ export const ProductList = ({data}) => {
 
   const mapped_Data = useMemo(() => {
     if (search) {
-      return Object.values(data).filter(it => {
-        console.log('it ', it);
-      });
+      return {
+        [Price.COST]: data[Price.COST]?.filter(it => it.name.includes(search)),
+        [Price.BIT]: data[Price.BIT]?.filter(it => it.name.includes(search)),
+        [Price.BI]: data[Price.BI]?.filter(it => it.name.includes(search)),
+      };
     } else {
       return data;
     }
@@ -96,3 +99,9 @@ export const ProductList = ({data}) => {
     </View>
   );
 };
+
+[
+  {'Bi Spender': [], 'Bit Pricer': [[Object], [Object]], 'Cost Effective': []},
+  {'Bi Spender': [], 'Bit Pricer': [[Object], [Object]], 'Cost Effective': []},
+  {'Bi Spender': [], 'Bit Pricer': [[Object], [Object]], 'Cost Effective': []},
+];
